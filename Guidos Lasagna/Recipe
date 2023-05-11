@@ -1,0 +1,36 @@
+EXPECTED_BAKE_TIME = 40
+time_elapsed = 0
+remaining_time = 0
+total_cook_time = 0
+
+
+def bake_time_remaining(time_elapsed):
+
+    remaining_time = EXPECTED_BAKE_TIME - time_elapsed
+    return remaining_time
+
+
+# should these be after the functions?
+time_left = bake_time_remaining(20)
+
+
+def preparation_time_in_minutes(number_of_layers):
+    number_of_layers += 2
+    return number_of_layers
+
+
+time_added = preparation_time_in_minutes(2)
+
+
+def elapsed_time_in_minutes(number_of_layers, time_elapsed):
+    sum_of_prep_time = number_of_layers + EXPECTED_BAKE_TIME
+    total_cook_time = sum_of_prep_time - time_elapsed
+    return total_cook_time
+
+
+total_prep_time = elapsed_time_in_minutes(2, 10)
+
+print(total_prep_time)
+
+print(
+    f"Sum of prep time: {time_added} minutes \nTime already spent baking: {total_prep_time} minutes")
